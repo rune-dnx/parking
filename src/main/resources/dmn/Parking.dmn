@@ -18,6 +18,12 @@
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
+  <dmn:itemDefinition id="_54143D4E-2AB0-447B-B303-2972AFA83F74" name="tCarPark" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="enumeration" id="_D13F982C-0EC3-41E7-A516-205E49AC5BD8">
+      <dmn:text>"Teateret", "Jorenholmen", "Valbergstårnet"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
   <dmn:decision id="_4E865C13-21B0-4687-BE4A-5067DC416414" name="Parking Amount">
     <dmn:extensionElements/>
     <dmn:variable id="_D38C093A-B750-41B5-94D4-A3F93CD0E6AC" name="Parking Amount" typeRef="tFee"/>
@@ -26,6 +32,9 @@
     </dmn:informationRequirement>
     <dmn:informationRequirement id="_6D4E1135-C8BE-4857-AA61-81DD58138177">
       <dmn:requiredInput href="#_BF1E4876-E0F6-4C11-848F-C64AFA53EEBB"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_0B9AB2F9-6199-4518-AF43-7F1D16028E4F">
+      <dmn:requiredInput href="#_9904DF03-7D7A-4402-AE57-05B90447E439"/>
     </dmn:informationRequirement>
     <dmn:context id="_6503AD31-3F28-4B78-BBF4-BC18582E6770">
       <dmn:contextEntry>
@@ -176,6 +185,12 @@
           </dmn:rule>
         </dmn:decisionTable>
       </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_82CC5B13-2937-498D-AE08-DFB45687B60F" name="Car Park Price" typeRef="string"/>
+        <dmn:literalExpression id="_BF088E3F-93E5-462A-847E-3F53CE6BC9F5">
+          <dmn:text>if Car_park = "Valbergstårnet" then "Prisen på Valbergstårenet er 30% høyere, så prisen her er kroner " + string(Price * 1.3) else "Prisen for " + string(Car_park) + " er kroner  " + string(Price)</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
     </dmn:context>
   </dmn:decision>
   <dmn:inputData id="_29721C55-69E6-4ADB-B16E-1133F1E523D2" name="In">
@@ -185,6 +200,10 @@
   <dmn:inputData id="_BF1E4876-E0F6-4C11-848F-C64AFA53EEBB" name="Out">
     <dmn:extensionElements/>
     <dmn:variable id="_93012D57-5AEE-4A68-BA1D-12AD1A82D30D" name="Out" typeRef="date and time"/>
+  </dmn:inputData>
+  <dmn:inputData id="_9904DF03-7D7A-4402-AE57-05B90447E439" name="Car_park">
+    <dmn:extensionElements/>
+    <dmn:variable id="_85B84883-C5BF-427D-8EF4-237D03F658B1" name="Car_park" typeRef="tCarPark"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_38F6189F-1A4A-426F-9CA9-56CCFAB50A0C" name="DRG">
@@ -215,6 +234,9 @@
             <kie:width>106</kie:width>
             <kie:width>326</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_BF088E3F-93E5-462A-847E-3F53CE6BC9F5">
+            <kie:width>820</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-drg-_4E865C13-21B0-4687-BE4A-5067DC416414" dmnElementRef="_4E865C13-21B0-4687-BE4A-5067DC416414" isCollapsed="false">
@@ -244,6 +266,15 @@
         <dc:Bounds x="506" y="311" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_9904DF03-7D7A-4402-AE57-05B90447E439" dmnElementRef="_9904DF03-7D7A-4402-AE57-05B90447E439" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="178" y="319" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_39EC6BDB-DE1B-416B-95AD-646FB2FD38AE-AUTO-TARGET" dmnElementRef="_39EC6BDB-DE1B-416B-95AD-646FB2FD38AE">
         <di:waypoint x="387" y="336"/>
         <di:waypoint x="483" y="193"/>
@@ -251,6 +282,10 @@
       <dmndi:DMNEdge id="dmnedge-drg-_6D4E1135-C8BE-4857-AA61-81DD58138177" dmnElementRef="_6D4E1135-C8BE-4857-AA61-81DD58138177">
         <di:waypoint x="556" y="336"/>
         <di:waypoint x="483" y="168"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_0B9AB2F9-6199-4518-AF43-7F1D16028E4F-AUTO-TARGET" dmnElementRef="_0B9AB2F9-6199-4518-AF43-7F1D16028E4F">
+        <di:waypoint x="228" y="344"/>
+        <di:waypoint x="483" y="193"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
