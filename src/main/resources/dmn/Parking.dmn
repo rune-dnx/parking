@@ -133,7 +133,7 @@
               <dmn:text>not(0)</dmn:text>
             </dmn:inputEntry>
             <dmn:outputEntry id="_38CEFF4A-52D2-4EBC-BB07-3F284AE67F74">
-              <dmn:text>"Valbergstårnet koster " + string(Base price * 1.3) + " kroner"</dmn:text>
+              <dmn:text>"Valbergstårnet koster " + string(floor(Base price * 1.3)) + " kroner"</dmn:text>
             </dmn:outputEntry>
             <dmn:annotationEntry>
               <dmn:text/>
