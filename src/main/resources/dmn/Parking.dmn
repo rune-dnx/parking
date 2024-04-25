@@ -177,7 +177,7 @@
               <dmn:text>&gt;=1</dmn:text>
             </dmn:inputEntry>
             <dmn:outputEntry id="_C9637DA7-951F-4D49-A43C-F8E007FE5430">
-              <dmn:text>Days * 30</dmn:text>
+              <dmn:text>Days * 300</dmn:text>
             </dmn:outputEntry>
             <dmn:annotationEntry>
               <dmn:text/>
@@ -254,7 +254,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="337" y="311" width="100" height="50"/>
+        <dc:Bounds x="358" y="319" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_BF1E4876-E0F6-4C11-848F-C64AFA53EEBB" dmnElementRef="_BF1E4876-E0F6-4C11-848F-C64AFA53EEBB" isCollapsed="false">
@@ -263,7 +263,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="506" y="311" width="100" height="50"/>
+        <dc:Bounds x="570" y="319" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_9904DF03-7D7A-4402-AE57-05B90447E439" dmnElementRef="_9904DF03-7D7A-4402-AE57-05B90447E439" isCollapsed="false">
@@ -276,11 +276,11 @@
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_39EC6BDB-DE1B-416B-95AD-646FB2FD38AE-AUTO-TARGET" dmnElementRef="_39EC6BDB-DE1B-416B-95AD-646FB2FD38AE">
-        <di:waypoint x="387" y="336"/>
+        <di:waypoint x="408" y="344"/>
         <di:waypoint x="483" y="193"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_6D4E1135-C8BE-4857-AA61-81DD58138177" dmnElementRef="_6D4E1135-C8BE-4857-AA61-81DD58138177">
-        <di:waypoint x="556" y="336"/>
+        <di:waypoint x="620" y="344"/>
         <di:waypoint x="483" y="168"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_0B9AB2F9-6199-4518-AF43-7F1D16028E4F-AUTO-TARGET" dmnElementRef="_0B9AB2F9-6199-4518-AF43-7F1D16028E4F">
