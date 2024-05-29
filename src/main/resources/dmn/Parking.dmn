@@ -23,8 +23,8 @@
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_54143D4E-2AB0-447B-B303-2972AFA83F74" name="tCarPark" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
-    <dmn:allowedValues kie:constraintType="enumeration" id="_D13F982C-0EC3-41E7-A516-205E49AC5BD8">
-      <dmn:text>"Teateret", "Jorenholmen", "Valbergstårnet"</dmn:text>
+    <dmn:allowedValues kie:constraintType="enumeration" id="_2F8691C9-7778-4296-884B-FC8FFDBA3450">
+      <dmn:text>"Teateret", "Jorenholmen", "ertert", "Valbergstårnet"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:decision id="_4E865C13-21B0-4687-BE4A-5067DC416414" name="Parking Amount">
