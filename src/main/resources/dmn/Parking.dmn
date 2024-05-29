@@ -23,8 +23,8 @@
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_54143D4E-2AB0-447B-B303-2972AFA83F74" name="tCarPark" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
-    <dmn:allowedValues kie:constraintType="enumeration" id="_2F8691C9-7778-4296-884B-FC8FFDBA3450">
-      <dmn:text>"Teateret", "Jorenholmen", "ertert", "Valbergstårnet"</dmn:text>
+    <dmn:allowedValues kie:constraintType="enumeration" id="_875DAF2F-B435-4F81-A6A3-0AA3141261C2">
+      <dmn:text>"Teateret", "Jorenholmen", "Posten", "Valbergstårnet"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:decision id="_4E865C13-21B0-4687-BE4A-5067DC416414" name="Parking Amount">
@@ -219,32 +219,32 @@
           <kie:ComponentWidths dmnElementRef="_6503AD31-3F28-4B78-BBF4-BC18582E6770">
             <kie:width>50</kie:width>
             <kie:width>120</kie:width>
-            <kie:width>1115</kie:width>
+            <kie:width>1637</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_4F25444A-F123-46F3-84DE-BA404E9402F9">
             <kie:width>50</kie:width>
             <kie:width>427</kie:width>
-            <kie:width>518</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>676</kie:width>
+            <kie:width>464</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_7F50F071-895E-473E-8B97-4DD7B3D87D9C">
             <kie:width>50</kie:width>
             <kie:width>228</kie:width>
             <kie:width>228</kie:width>
-            <kie:width>377</kie:width>
-            <kie:width>212</kie:width>
+            <kie:width>741</kie:width>
+            <kie:width>370</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8EC1A9F9-E5AD-4912-8F1F-D4027EBD6C70">
-            <kie:width>1115</kie:width>
+            <kie:width>1637</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F6B99B09-C2D8-49A8-805B-33F902F46A04">
-            <kie:width>1115</kie:width>
+            <kie:width>1637</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_1186C3D6-9551-4760-B049-4A02929C8C36">
-            <kie:width>1115</kie:width>
+            <kie:width>1637</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0354E62A-84DC-49A2-8593-C6124360BD93">
-            <kie:width>1115</kie:width>
+            <kie:width>1637</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_3B0D7464-ABF0-4CC2-8920-96832047C5AB">
             <kie:width>190</kie:width>
