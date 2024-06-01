@@ -224,7 +224,7 @@
   </dmn:decision>
   <dmn:inputData id="_538AA160-6646-4382-80FD-AF14E22C2DE5" name="Car_park">
     <dmn:extensionElements/>
-    <dmn:variable id="_C8D1936D-B866-4150-ADB7-92F58EDE385A" name="Car_park" typeRef="tCarPark"/>
+    <dmn:variable id="_C8D1936D-B866-4150-ADB7-92F58EDE385A" name="Car_park" typeRef="string"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_38F6189F-1A4A-426F-9CA9-56CCFAB50A0C" name="DRG">
