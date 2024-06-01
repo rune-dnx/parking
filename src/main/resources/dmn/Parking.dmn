@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_C3A62053-8072-4DE9-84C5-57E5D0044E9B" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_1839F8FB-6689-4F54-91B4-9D5D3CFC4BBD" name="Parking Amount" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_C3A62053-8072-4DE9-84C5-57E5D0044E9B">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_C3A62053-8072-4DE9-84C5-57E5D0044E9B" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_1839F8FB-6689-4F54-91B4-9D5D3CFC4BBD" name="ParkingAmount" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_C3A62053-8072-4DE9-84C5-57E5D0044E9B">
   <dmn:extensionElements/>
   <dmn:itemDefinition id="_209C8908-5741-4AAF-8397-0C1F49EBAB50" name="tFee" isCollection="false">
     <dmn:itemComponent id="_54281CC8-C0A2-425A-B30A-74BBBC8CB4FC" name="Car Park Price" isCollection="false">
@@ -23,13 +23,13 @@
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_54143D4E-2AB0-447B-B303-2972AFA83F74" name="tCarPark" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
-    <dmn:allowedValues kie:constraintType="enumeration" id="_DE3BBB60-34F4-4B2B-BCC1-2A079C556845">
-      <dmn:text>"Teateret", "Jorenholmen", "Posten", "Valbergstårnet", "Abc"</dmn:text>
+    <dmn:allowedValues kie:constraintType="enumeration" id="_9595C3BC-8B74-4B56-81C7-92D3719264C2">
+      <dmn:text>"Teateret", "Jorenholmen", "Posten", "Valbergstårnet", "null"</dmn:text>
     </dmn:allowedValues>
   </dmn:itemDefinition>
-  <dmn:decision id="_4E865C13-21B0-4687-BE4A-5067DC416414" name="Parking Amount">
+  <dmn:decision id="_4E865C13-21B0-4687-BE4A-5067DC416414" name="ParkingAmount">
     <dmn:extensionElements/>
-    <dmn:variable id="_D38C093A-B750-41B5-94D4-A3F93CD0E6AC" name="Parking Amount" typeRef="tFee"/>
+    <dmn:variable id="_D38C093A-B750-41B5-94D4-A3F93CD0E6AC" name="ParkingAmount" typeRef="tFee"/>
     <dmn:informationRequirement id="_C46F32FD-ED90-4F7D-A6EB-A0F4A31AE289">
       <dmn:requiredDecision href="#_1F79C0BF-1B5D-4047-B0A0-B08F06C33AB9"/>
     </dmn:informationRequirement>
@@ -107,7 +107,7 @@
               <dmn:text>Car_park</dmn:text>
             </dmn:inputExpression>
             <dmn:inputValues kie:constraintType="enumeration" id="_840E030F-50C3-44B1-A9FA-CA3BA44E379D">
-              <dmn:text>"Teateret", "Jorenholmen", "Valbergstårnet","Posten"."Abc"</dmn:text>
+              <dmn:text>"Teateret", "Jorenholmen", "Valbergstårnet","Posten","null"</dmn:text>
             </dmn:inputValues>
           </dmn:input>
           <dmn:input id="_287ACE0C-C325-4B8B-82D5-16CCA3FB0AA2">
@@ -131,6 +131,20 @@
               <dmn:text/>
             </dmn:annotationEntry>
           </dmn:rule>
+          <dmn:rule id="_25BDFDFF-4FA3-4048-8B6E-75B81C45B4A8">
+            <dmn:inputEntry id="_7AD27EEE-D175-4582-A58D-09947C51E7C9">
+              <dmn:text>"null"</dmn:text>
+            </dmn:inputEntry>
+            <dmn:inputEntry id="_6E30C994-6BCD-4D7C-AE96-53719CA9F244">
+              <dmn:text>not(0)</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_9ACFC34D-B8D9-4373-BC06-0915EF228F15">
+              <dmn:text>"De fleste parkeringshusene som for eksempel Posten, Teateret og Jorenholmen koster " + string(Base price) + " kroner. Valbergstårent er litt dyrere, så her er prisen " + string(floor(Base price * 1.3)) + " kroner"</dmn:text>
+            </dmn:outputEntry>
+            <dmn:annotationEntry>
+              <dmn:text/>
+            </dmn:annotationEntry>
+          </dmn:rule>
           <dmn:rule id="_FCA6B629-0965-4468-8AC3-AD9EF1F74D9E">
             <dmn:inputEntry id="_5A009606-F250-4756-A1CA-637915C391F4">
               <dmn:text>"Valbergstårnet"</dmn:text>
@@ -147,7 +161,7 @@
           </dmn:rule>
           <dmn:rule id="_10832E14-FF10-473E-ABDD-75663ACA8ED7">
             <dmn:inputEntry id="_7992D1D1-B7FA-4231-9F5A-880E000B3CD9">
-              <dmn:text>not("Valbergstårnet")</dmn:text>
+              <dmn:text>"Posten","Teateret","Jorenholmen"</dmn:text>
             </dmn:inputEntry>
             <dmn:inputEntry id="_FD7B0C59-1B9C-4201-B790-5BCF47494FBF">
               <dmn:text>not(0)</dmn:text>
@@ -219,32 +233,32 @@
           <kie:ComponentWidths dmnElementRef="_6503AD31-3F28-4B78-BBF4-BC18582E6770">
             <kie:width>50</kie:width>
             <kie:width>120</kie:width>
-            <kie:width>1713</kie:width>
+            <kie:width>1633</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_4F25444A-F123-46F3-84DE-BA404E9402F9">
             <kie:width>50</kie:width>
             <kie:width>453</kie:width>
             <kie:width>717</kie:width>
-            <kie:width>473</kie:width>
+            <kie:width>393</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_7F50F071-895E-473E-8B97-4DD7B3D87D9C">
             <kie:width>50</kie:width>
             <kie:width>299</kie:width>
             <kie:width>232</kie:width>
             <kie:width>755</kie:width>
-            <kie:width>357</kie:width>
+            <kie:width>277</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8EC1A9F9-E5AD-4912-8F1F-D4027EBD6C70">
-            <kie:width>1713</kie:width>
+            <kie:width>1633</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F6B99B09-C2D8-49A8-805B-33F902F46A04">
-            <kie:width>1713</kie:width>
+            <kie:width>1633</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_1186C3D6-9551-4760-B049-4A02929C8C36">
-            <kie:width>1713</kie:width>
+            <kie:width>1633</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0354E62A-84DC-49A2-8593-C6124360BD93">
-            <kie:width>1713</kie:width>
+            <kie:width>1633</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_3B0D7464-ABF0-4CC2-8920-96832047C5AB">
             <kie:width>190</kie:width>
