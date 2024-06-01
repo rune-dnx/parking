@@ -131,20 +131,6 @@
               <dmn:text/>
             </dmn:annotationEntry>
           </dmn:rule>
-          <dmn:rule id="_25BDFDFF-4FA3-4048-8B6E-75B81C45B4A8">
-            <dmn:inputEntry id="_7AD27EEE-D175-4582-A58D-09947C51E7C9">
-              <dmn:text>"null"</dmn:text>
-            </dmn:inputEntry>
-            <dmn:inputEntry id="_6E30C994-6BCD-4D7C-AE96-53719CA9F244">
-              <dmn:text>not(0)</dmn:text>
-            </dmn:inputEntry>
-            <dmn:outputEntry id="_9ACFC34D-B8D9-4373-BC06-0915EF228F15">
-              <dmn:text>"De fleste parkeringshusene som for eksempel Posten, Teateret og Jorenholmen koster " + string(Base price) + " kroner. Valbergstårent er litt dyrere, så her er prisen " + string(floor(Base price * 1.3)) + " kroner"</dmn:text>
-            </dmn:outputEntry>
-            <dmn:annotationEntry>
-              <dmn:text/>
-            </dmn:annotationEntry>
-          </dmn:rule>
           <dmn:rule id="_FCA6B629-0965-4468-8AC3-AD9EF1F74D9E">
             <dmn:inputEntry id="_5A009606-F250-4756-A1CA-637915C391F4">
               <dmn:text>"Valbergstårnet"</dmn:text>
@@ -168,6 +154,20 @@
             </dmn:inputEntry>
             <dmn:outputEntry id="_C77F433A-3E3C-444D-9A9A-075DE0B2848D">
               <dmn:text>"Det koster " + string(Base price) + " kroner"</dmn:text>
+            </dmn:outputEntry>
+            <dmn:annotationEntry>
+              <dmn:text/>
+            </dmn:annotationEntry>
+          </dmn:rule>
+          <dmn:rule id="_56D97F05-97AA-4F25-94FF-16B563289087">
+            <dmn:inputEntry id="_D025AB50-FBF8-43BB-8191-11E75F7ADF19">
+              <dmn:text>not("Posten","Teateret","Jorenholmen","Valbergstårnet")</dmn:text>
+            </dmn:inputEntry>
+            <dmn:inputEntry id="_1CC40A34-0477-4347-9CBB-0BD52FB4381E">
+              <dmn:text>not(0)</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_8ADD1EA3-30CC-4C1E-A3D9-4E258CDBC52E">
+              <dmn:text>"De fleste parkeringshusene som for eksempel Posten, Teateret og Jorenholmen koster " + string(Base price) + " kroner. Valbergstårent er litt dyrere, så her er prisen " + string(floor(Base price * 1.3)) + " kroner"</dmn:text>
             </dmn:outputEntry>
             <dmn:annotationEntry>
               <dmn:text/>
@@ -233,32 +233,32 @@
           <kie:ComponentWidths dmnElementRef="_6503AD31-3F28-4B78-BBF4-BC18582E6770">
             <kie:width>50</kie:width>
             <kie:width>120</kie:width>
-            <kie:width>1633</kie:width>
+            <kie:width>1593</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_4F25444A-F123-46F3-84DE-BA404E9402F9">
             <kie:width>50</kie:width>
             <kie:width>453</kie:width>
             <kie:width>717</kie:width>
-            <kie:width>393</kie:width>
+            <kie:width>353</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_7F50F071-895E-473E-8B97-4DD7B3D87D9C">
             <kie:width>50</kie:width>
             <kie:width>299</kie:width>
             <kie:width>232</kie:width>
             <kie:width>755</kie:width>
-            <kie:width>277</kie:width>
+            <kie:width>237</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8EC1A9F9-E5AD-4912-8F1F-D4027EBD6C70">
-            <kie:width>1633</kie:width>
+            <kie:width>1593</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_F6B99B09-C2D8-49A8-805B-33F902F46A04">
-            <kie:width>1633</kie:width>
+            <kie:width>1593</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_1186C3D6-9551-4760-B049-4A02929C8C36">
-            <kie:width>1633</kie:width>
+            <kie:width>1593</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_0354E62A-84DC-49A2-8593-C6124360BD93">
-            <kie:width>1633</kie:width>
+            <kie:width>1593</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_3B0D7464-ABF0-4CC2-8920-96832047C5AB">
             <kie:width>190</kie:width>
