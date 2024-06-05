@@ -20,6 +20,9 @@
     <dmn:itemComponent id="_998F0771-BE9A-4EF2-A54F-9BB40F4D36B0" name="Price" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
+    <dmn:itemComponent id="_4A14181A-3FF3-4766-8F5E-C32D35781265" name="Tips" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_54143D4E-2AB0-447B-B303-2972AFA83F74" name="tCarPark" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
@@ -42,7 +45,7 @@
     <dmn:informationRequirement id="_D084C6FD-61F8-4AB8-87D1-2677B3B00706">
       <dmn:requiredInput href="#_29721C55-69E6-4ADB-B16E-1133F1E523D2" />
     </dmn:informationRequirement>
-    <dmn:context id="_6503AD31-3F28-4B78-BBF4-BC18582E6770">
+    <dmn:context id="_6503AD31-3F28-4B78-BBF4-BC18582E6770" label="ParkingAmount" typeRef="tFee">
       <dmn:contextEntry id="_BD5D0ABD-361A-42E1-BADB-E897546848B5">
         <dmn:variable id="_AAB34B2D-F837-4498-A356-FD2A4E09D5DE" name="Base price" typeRef="number" />
         <dmn:decisionTable id="_4F25444A-F123-46F3-84DE-BA404E9402F9" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
@@ -196,6 +199,31 @@
           <dmn:text>Period.days</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
+      <dmn:contextEntry id="_E07DD9A3-03E9-4415-BA42-2B8C48E685D3">
+        <dmn:variable id="_5676D6BA-A6CC-4471-A7D8-30E0FB3D46E8" name="Tips" typeRef="string">
+          <dmn:description></dmn:description>
+        </dmn:variable>
+        <dmn:decisionTable id="_65BD9E95-DB54-4C8B-B359-5E3E9FE47525" typeRef="string" hitPolicy="COLLECT" label="Tips">
+          <dmn:input id="_071B2018-4602-456A-B17A-FE3DD0BC2D4C">
+            <dmn:inputExpression id="_AF186B40-BE77-47D1-8E31-375AF8719176" typeRef="days and time duration">
+              <dmn:text>dtDuration</dmn:text>
+            </dmn:inputExpression>
+          </dmn:input>
+          <dmn:output id="_E8650FB4-41FC-4B7C-BEC9-192575E8D144" name="Output-1" />
+          <dmn:annotation name="Annotations" />
+          <dmn:rule id="_EA255619-9F5E-4823-B194-DCAEBD799826">
+            <dmn:inputEntry id="_D0AD1257-4100-49E0-BC8E-6AFCA352500F">
+              <dmn:text>[duration(&quot;PT21M&quot;)..duration(&quot;PT30M&quot;))</dmn:text>
+            </dmn:inputEntry>
+            <dmn:outputEntry id="_062BD869-C86A-4FFA-97FD-1F4E915BD5D6">
+              <dmn:text>&quot;Det er gratis å parkere i 20 minutter, så du betaler for en full time hvsi du parkerer i &quot; + string (Minutes-20)+ &quot; minutter.&quot;</dmn:text>
+            </dmn:outputEntry>
+            <dmn:annotationEntry>
+              <dmn:text>// Your annotations here</dmn:text>
+            </dmn:annotationEntry>
+          </dmn:rule>
+        </dmn:decisionTable>
+      </dmn:contextEntry>
     </dmn:context>
   </dmn:decision>
   <dmn:inputData id="_29721C55-69E6-4ADB-B16E-1133F1E523D2" name="In">
@@ -284,6 +312,12 @@ This is the end time of parking for which parking fees should be calculated </dm
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_3B0D7464-ABF0-4CC2-8920-96832047C5AB">
             <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_65BD9E95-DB54-4C8B-B359-5E3E9FE47525">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
