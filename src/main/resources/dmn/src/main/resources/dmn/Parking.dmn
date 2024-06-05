@@ -227,8 +227,7 @@
     <dmn:description>You are a parking assistant who calculates the parking fees for start and end time of vehicle for different locations.
 Car_park has a enumerated list of ( Teatere, Jorenholmen, Valbergstårnet, Posten)
 parking fees can vary based on these locations</dmn:description>
-    <dmn:extensionElements>
-    </dmn:extensionElements>
+    <dmn:extensionElements />
     <dmn:authorityRequirement id="_B8FFDEC2-E2DE-4BAC-94C8-99832A204A79">
       <dmn:requiredDecision href="#_4E865C13-21B0-4687-BE4A-5067DC416414" />
     </dmn:authorityRequirement>
@@ -362,31 +361,31 @@ This is the end time of parking for which parking fees should be calculated </dm
           <dmndi:FillColor blue="247" green="247" red="247" />
           <dmndi:StrokeColor blue="245" green="245" red="245" />
         </dmndi:DMNStyle>
-        <dc:Bounds x="780" y="40" width="160" height="140" />
+        <dc:Bounds x="720" y="-20" width="160" height="140" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_A8E4FDDA-1BAE-4D9F-9C9B-DF41526AE64B-AUTO-TARGET" dmnElementRef="_B8FFDEC2-E2DE-4BAC-94C8-99832A204A79" sourceElement="dmnshape-drg-_4E865C13-21B0-4687-BE4A-5067DC416414" targetElement="_62C32BE8-0E9D-433F-AB75-C84E36CBF2D8">
         <di:waypoint x="430" y="150" />
-        <di:waypoint x="860" y="110" />
+        <di:waypoint x="800" y="50" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="_61E810DF-7E07-44B8-900B-D408A6E5CF26" dmnElementRef="_FC35BD59-1542-4B9D-8A2B-122F8FE52D9A" isCollapsed="false" isListedInputData="false">
         <dmndi:DMNStyle id="_58D05A29-B269-44B8-96A0-E4A308624E01" fontSize="13" />
-        <dc:Bounds x="780" y="220" width="160" height="120" />
+        <dc:Bounds x="840" y="200" width="160" height="120" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_CB8D6D38-1236-47AB-81A1-F91D1397E2B1-AUTO-TARGET" dmnElementRef="_3CBAD6F0-5512-4B8C-859D-F636FA12753F" sourceElement="dmnshape-drg-_1F79C0BF-1B5D-4047-B0A0-B08F06C33AB9" targetElement="_61E810DF-7E07-44B8-900B-D408A6E5CF26">
         <di:waypoint x="660" y="260" />
-        <di:waypoint x="860" y="280" />
+        <di:waypoint x="920" y="260" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="_B61FF3A8-00EF-4B44-9FCC-7C216A80E185" dmnElementRef="_F48AB7E5-3B27-4C91-800F-D7E41EA49385" isCollapsed="false" isListedInputData="false">
         <dmndi:DMNStyle id="_7B04D826-D3E5-44E9-800D-000E942764D2" fontSize="12" />
-        <dc:Bounds x="480" y="600" width="160" height="100" />
+        <dc:Bounds x="480" y="660" width="160" height="100" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_C6868709-AA8B-4E91-9480-70F003F8DFB3-AUTO-TARGET" dmnElementRef="_1C0B2C61-95DA-469F-A383-C55E188CDE20" sourceElement="dmnshape-drg-_BF1E4876-E0F6-4C11-848F-C64AFA53EEBB" targetElement="_B61FF3A8-00EF-4B44-9FCC-7C216A80E185">
         <di:waypoint x="640" y="475" />
-        <di:waypoint x="560" y="650" />
+        <di:waypoint x="560" y="710" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_2D5E94F1-F7E8-4B19-B26E-7A46BB693BD8" dmnElementRef="_2B0D96DC-5990-4200-9C61-A8317F8634D2" sourceElement="dmnshape-drg-_29721C55-69E6-4ADB-B16E-1133F1E523D2" targetElement="_B61FF3A8-00EF-4B44-9FCC-7C216A80E185">
         <di:waypoint x="460" y="500" />
-        <di:waypoint x="560" y="600" />
+        <di:waypoint x="560" y="660" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
     <dmndi:DMNDiagram id="_CD25E122-DD41-4560-AC40-176A0F84B066" name="Unnamed DRD" useAlternativeInputDataShape="false">
