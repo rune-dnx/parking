@@ -216,7 +216,7 @@
               <dmn:text>[duration(&quot;PT21M&quot;)..duration(&quot;PT30M&quot;))</dmn:text>
             </dmn:inputEntry>
             <dmn:outputEntry id="_062BD869-C86A-4FFA-97FD-1F4E915BD5D6">
-              <dmn:text>&quot;Det er gratis å parkere i 20 minutter, så du betaler for en full time hvsi du parkerer i &quot; + string (Minutes-20)+ &quot; minutter.&quot;</dmn:text>
+              <dmn:text>&quot;Du betaler for en full halv time, fordi du parkerer &quot; + string (Minutes-20)+ &quot; minutter mer en gratis perioden som er 20 minutter.&quot;</dmn:text>
             </dmn:outputEntry>
             <dmn:annotationEntry>
               <dmn:text>// Your annotations here</dmn:text>
